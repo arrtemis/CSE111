@@ -18,20 +18,19 @@ public class hw1{
 
     System.out.print("Enter value of k: ");
     int k = sc.nextInt();
-    int start = 0, end = start + k;
+    int start = 0, end = start + k - 1;
     double max_avg = 0.0, current_avg;
     while (end != size) {
       int sum = 0;
-      for(int i = start; i < end; i++){
-        System.out.print(marks[i] + " ");
+      for(int i = start; i <= end; i++){
         sum += marks[i];
       }
-      current_avg = sum / k;
+      current_avg = sum / (double)k;
       if(current_avg > max_avg) max_avg = current_avg;
       start++;
       end++;
     }
-    System.out.println("Max Avg: " + max_avg);
+    System.out.printf("Max Avg: %.2f\n", max_avg);
     sc.close();
   }
 }
