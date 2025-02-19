@@ -1,33 +1,29 @@
 import java.util.Scanner;
 
 public class task7 {
-  public static void input_arr(double[] arr){
-    Scanner sc = new Scanner(System.in);
-    for(int i = 0; i < arr.length; i++){
-      arr[i] = sc.nextDouble();
-    }
-  }
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.print("N = ");
     int size = sc.nextInt();
     double[] arr = new double[size];
-    int removed = 0;
-    int a = 0, b = 1;
+    int removed = 0, index = 0;
+    double prev_input = 0;
 
     System.out.println("Please enter the elements of the array: ");
-    input_arr(arr);
 
-    while(b < arr.length){
-      if(arr[a] == arr[b]){
-        double temp = arr[b];
-        arr[b] = arr[b+1];
-        arr[b+1] = temp;
+    for(int i = 0; i < arr.length; i++){
+      double current_input = sc.nextDouble();
+      if(i > 0){
+        prev_input = arr[index-1];
+      }
+      if(prev_input != current_input){
+        arr[index] = current_input;
+        index++;
+      }else{
         removed++;
       }
-      a++;
-      b++;
     }
+    
     for (int i = 0; i < arr.length - removed; i++) {
       System.out.print(arr[i] + " ");
     }
