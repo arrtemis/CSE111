@@ -18,7 +18,7 @@ public class task7 {
     System.out.println("Please enter the elements of the array: ");
     input_arr(arr);
 
-    while(b < arr.length){
+    while(b < arr.length -1){
       if(arr[a] == arr[b]){
         double temp = arr[b];
         arr[b] = arr[b+1];
