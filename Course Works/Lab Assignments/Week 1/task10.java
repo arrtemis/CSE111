@@ -36,7 +36,7 @@ public class task10 {
           System.out.println("game over");
         }else if(arr2D[row_pos - 1][col_pos] == 10){
           System.out.println("game win");
-            }else if(arr2D[row_pos - 1][col_pos] == 0){
+        }else if(arr2D[row_pos - 1][col_pos] == 0){
           arr2D[row_pos][col_pos] = 0;
           arr2D[--row_pos][col_pos] = 7;
         }
@@ -52,23 +52,24 @@ public class task10 {
       }else if(inp.equals("left")){
         if(col_pos - 1 < 0 || arr2D[row_pos][col_pos - 1] == -1){
           System.out.println("game over");
-        }else if(arr2D[row_pos][col_pos - 1])
+        }else if(arr2D[row_pos][col_pos - 1] == 10){
+          System.out.println("game won");
+        }else if(arr2D[row][col_pos - 1] == 0){
+          arr2D[row_pos][col_pos] = 0;
+          arr2D[row_pos][--col_pos] = 7;
+        }
       }else if(inp.equals("right")){
-
+        if(col_pos + 1 > col || arr2D[row_pos][col_pos + 1] == -1){
+          System.out.println("game over");
+        }else if(arr2D[row_pos][col_pos + 1] == 10){
+          System.out.println("game won");
+        }else if(arr2D[row][col_pos + 1] == 0){
+          arr2D[row_pos][col_pos] = 0;
+          arr2D[row_pos][++col_pos] = 7;
+        }
       }else{
         System.out.println("Invalid movment");
       }
-      /* Movement
-       * UP (row--)
-       * DOWN (row++)
-       * LEFT (col++)
-       * RIGHT (col--)
-       */
-      /*To-do: Based on the input update the player position and check if
-       * 1. the player fell out of the grid
-       * 2. player stepped on mine
-       * 3. player found the treasure
-       * otheriwse, update the player position */
       System.out.println("Current state:");
       printMap(arr2D);
       turns--;
@@ -81,7 +82,7 @@ public class task10 {
   public static void printMap(int[][] arr) { 
     for(int i = 0; i < arr.length; i++){
       for(int j = 0; j < arr[0].length; j++){
-        System.out.println(arr[i][j] + " ");
+        System.out.print(arr[i][j] + " ");
       }
       System.out.println();
     }
