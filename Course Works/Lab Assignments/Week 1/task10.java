@@ -14,6 +14,8 @@ public class task10 {
     int row = arr2D.length;
     int col = arr2D[0].length;
     int row_pos = -1, col_pos = -1;
+
+    //find player position
     for(int i = 0; i < row; i++){
       for(int j = 0; j < col; j++){
         if(arr2D[i][j] == 7){
@@ -28,6 +30,7 @@ public class task10 {
       int new_row = row_pos, new_col = col_pos;
       System.out.printf("Enter move %d: ",(6-turns));
       String inp = sc.nextLine();
+
       if(inp.equals("up")){
         if(row_pos - 1 < 0 || arr2D[row_pos - 1][col_pos] == -1){
           System.out.println("game over");
@@ -42,7 +45,7 @@ public class task10 {
           System.out.println("game over");
         }else if(arr2D[row_pos + 1][col_pos] == 10){
           System.out.println("game win");
-            }else if(arr2D[row_pos + 1][col_pos] == 0){
+        }else if(arr2D[row_pos + 1][col_pos] == 0){
           arr2D[row_pos][col_pos] = 0;
           arr2D[++row_pos][col_pos] = 7;
         }
