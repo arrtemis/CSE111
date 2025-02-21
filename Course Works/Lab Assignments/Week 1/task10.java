@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class task10 {
     public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    int [][] arr2D = {{0, 0, 10, 0, -1},
+    int [][] arr2D = {{0, 0, 10, 0, 0},
                       {0, -1, 0, 0, -1},
                       {-1, 0, -1, 0, 0},
                       {0, -1, 7, 0, -1},
@@ -23,47 +23,75 @@ public class task10 {
           col_pos = j;
         }
       }
-    }
-    
+    }    
     int turns = 5;
     while (turns > 0) {
       int new_row = row_pos, new_col = col_pos;
       System.out.printf("Enter move %d: ",(6-turns));
       String inp = sc.nextLine();
+      int future_tile = 0;
 
-      if(inp.equals("up")){
-        if(row_pos - 1 < 0 || arr2D[row_pos - 1][col_pos] == -1){
+      if(inp.equals("UP")){
+        if(row_pos - 1 < 0){
           System.out.println("game over");
-        }else if(arr2D[row_pos - 1][col_pos] == 10){
+          break;
+        }
+        future_tile = arr2D[row_pos - 1][col_pos];
+        if(future_tile == -1){
+          System.out.println("game over");
+          break;
+        }else if(future_tile == 10){
           System.out.println("game win");
-        }else if(arr2D[row_pos - 1][col_pos] == 0){
+          break;
+        }else if(future_tile == 0){
           arr2D[row_pos][col_pos] = 0;
           arr2D[--row_pos][col_pos] = 7;
         }
-      }else if(inp.equals("down")){
-        if(row_pos + 1 > row || arr2D[row_pos + 1][col_pos] == -1){
+      }else if(inp.equals("DOWN")){
+        if(row_pos + 1 >= row){
           System.out.println("game over");
-        }else if(arr2D[row_pos + 1][col_pos] == 10){
+          break;
+        }
+        future_tile = arr2D[row_pos + 1][col_pos];
+        if(future_tile == 10){
           System.out.println("game win");
-        }else if(arr2D[row_pos + 1][col_pos] == 0){
+          break;
+        }else if(future_tile == -1){
+          System.out.println("game over");
+          break;
+        }else if(future_tile == 0){
           arr2D[row_pos][col_pos] = 0;
           arr2D[++row_pos][col_pos] = 7;
         }
-      }else if(inp.equals("left")){
-        if(col_pos - 1 < 0 || arr2D[row_pos][col_pos - 1] == -1){
-          System.out.println("game over");
-        }else if(arr2D[row_pos][col_pos - 1] == 10){
+      }else if(inp.equals("LEFT")){
+        if(col_pos - 1 < 0){
+        System.out.println("game over");
+        break;
+      }
+        future_tile = arr2D[row_pos][col_pos - 1];
+        if(future_tile == 10){
           System.out.println("game won");
-        }else if(arr2D[row][col_pos - 1] == 0){
+          break;
+        }else if(future_tile == -1){
+          System.out.println("game over");
+          break;
+        }else if(future_tile == 0){
           arr2D[row_pos][col_pos] = 0;
           arr2D[row_pos][--col_pos] = 7;
         }
-      }else if(inp.equals("right")){
-        if(col_pos + 1 > col || arr2D[row_pos][col_pos + 1] == -1){
+      }else if(inp.equals("RIGHT")){
+        if(col_pos + 1 >= col){
           System.out.println("game over");
-        }else if(arr2D[row_pos][col_pos + 1] == 10){
+          break;
+        }
+        future_tile = arr2D[row_pos][col_pos + 1];
+        if(future_tile == 10){
           System.out.println("game won");
-        }else if(arr2D[row][col_pos + 1] == 0){
+          break;
+        }else if(future_tile == -1){
+          System.out.println("game over");
+          break;
+        }else if(future_tile == 0){
           arr2D[row_pos][col_pos] = 0;
           arr2D[row_pos][++col_pos] = 7;
         }
@@ -77,6 +105,7 @@ public class task10 {
     if (turns == 0) {
       System.out.println("Failed to find the treasure.");
     }
+    sc.close();
   }
   
   public static void printMap(int[][] arr) { 

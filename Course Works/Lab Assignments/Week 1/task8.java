@@ -43,5 +43,6 @@ public class task8 {
       System.out.print(flattened[k] + " ");
     }
     System.out.println();
+    sc.close();
   }
 }

@@ -7,8 +7,12 @@ public class task1 {
       num = sc.nextInt();
       if(num % 2 == 1 && num > 0){
         sum += num;
-        if(num > max) max = num;
-        if(num < min) min = num;
+        if(num > max){
+          max = num;
+        }
+        if(num < min){
+          min = num;
+        }
         count++;
       }
       
