@@ -7,12 +7,6 @@ public class UniversityTester {
 
     System.out.println("Uni_1 location: " + uni1);
     System.out.println("Uni_2 location: " + uni2);
-    
-    System.out.println();
-    System.out.println("Uni_1 name: " + uni1.name);
-    System.out.println("Uni_1 country: " + uni1.country);
-    System.out.println("Uni_2 name: " + uni2.name);
-    System.out.println("Uni_2 country: " + uni2.country);
 
     uni1.name = "Imperial College London";
     uni1.country = "England";

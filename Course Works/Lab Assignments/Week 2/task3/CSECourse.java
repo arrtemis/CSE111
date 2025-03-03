@@ -1,7 +1,7 @@
 package task3;
 
 public class CSECourse {
-  public String courseName;
-  public String courseCode;
-  public int credit;
+  public String courseName = "Programming Language II";
+  public String courseCode = "CSE111";
+  public int credit = 3;
 }

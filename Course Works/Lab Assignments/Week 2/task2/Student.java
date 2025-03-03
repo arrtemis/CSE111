@@ -1,6 +1,6 @@
 package task2;
 
 public class Student {
-  public String name;
+  public String name = "Default";
   public int id;
 }

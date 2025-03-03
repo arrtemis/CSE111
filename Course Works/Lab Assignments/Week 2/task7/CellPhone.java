@@ -21,14 +21,12 @@ public class CellPhone {
     }
   }
 
-  public void storeContact(String string) {
+  public void storeContact(String contact) {
     if(contacts < 3){
-      contacts_list[contacts] = string;
-      contacts++;
+      contacts_list[contacts++] = contact;
       System.out.println("Contact Stored");
     }else{
       System.out.println("Memory full. New contact can't be stored");
     }
   }
-
 }
