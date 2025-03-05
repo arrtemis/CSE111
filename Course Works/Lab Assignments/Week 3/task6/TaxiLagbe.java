@@ -17,7 +17,10 @@ public class TaxiLagbe {
     for (int i = 0; i < total_passengers; i++) {
       System.out.print(passengers[i] + " ");
     }
-    System.out.println("\nTotal collected fare: " + total_fare + " Taka");
+    if(total_passengers != 0){
+      System.out.println();
+    }
+    System.out.println("Total collected fare: " + total_fare + " Taka");
   }
 
   public void addPassenger(String name, int fare) {
@@ -26,6 +29,7 @@ public class TaxiLagbe {
     }else{
       passengers[total_passengers++] = name;
       total_fare += fare;
+      System.out.println("Dear " + name + "! Welcome to TaxiLagbe");
     }
   }
 
