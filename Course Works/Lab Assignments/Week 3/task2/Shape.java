@@ -26,8 +26,8 @@ public class Shape {
       area = rect_a * rect_b;
     }
     
-    String res = "Shape Name: " + type + "\nArea: " + area;
-    return res;
+    System.out.printf("Type: %s\nArea: %.2f", type,area);
+    return "";
   }
 
 }
