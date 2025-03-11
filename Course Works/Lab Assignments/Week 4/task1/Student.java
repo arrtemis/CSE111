@@ -8,9 +8,6 @@ public class Student{
     this.name = name;
     prog = major;
   }
-  public Student(int i) {
-    //TODO Auto-generated constructor stub
-  }
   public void updateName(String name){
     this.name = name;
   }
