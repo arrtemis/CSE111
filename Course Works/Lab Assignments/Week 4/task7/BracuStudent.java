@@ -14,6 +14,6 @@ public class BracuStudent {
     livesIn = newHome;
   }
   public void getPass(){
-    
+    hasBP = true;
   }
 }
