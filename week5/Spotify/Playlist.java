@@ -1,7 +1,5 @@
 package week5.Spotify;
 
-import java.util.LinkedList;
-
 public class Playlist {
   public String name;
   public Song start;
