@@ -150,9 +150,7 @@ public class Playlist {
     }
     currentSong = playlistName.start;
     while(currentSong.next != null){
-      LinkedList ls = new LinkedList<>();
-      ls.add(currentSong);
-      ls.
+
     }
   }
 }
