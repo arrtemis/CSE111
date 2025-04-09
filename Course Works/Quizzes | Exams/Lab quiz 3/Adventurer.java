@@ -18,7 +18,7 @@ public class Adventurer {
       accepted++;
       count++;
       quest.isAccepted = true;
-      System.out.println(name + " has accepted the quest " + quest.showInfo);
+      System.out.println(name + " has accepted the quest " + quest.showInfo());
     }else{
       System.out.println(name + " has reached the quest limit (3 quests)");
     }
@@ -28,7 +28,7 @@ public class Adventurer {
     if(quest.isCompleted){
       System.out.println(name + " already completed the quest.");
     }else if(!quest.isCompleted){
-      System.out.println(name + " has completed the quest " + quest.showInfo);
+      System.out.println(name + " has completed the quest " + quest.showInfo());
       completed++;
       quest.isCompleted = true;
     }

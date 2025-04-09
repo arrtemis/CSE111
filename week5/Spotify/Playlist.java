@@ -146,9 +146,6 @@ public class Playlist {
     if(currentSong.next == null){
       currentSong.next = playlistName.start;
     }
-    currentSong = playlistName.start;
-    while(currentSong.next != null){
-
-    }
+    System.out.println("Merge Completed!");
   }
 }

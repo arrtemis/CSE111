@@ -6,6 +6,11 @@ public class DragonSlayersGuild{
     Adventurer kirito = new Adventurer("Kirito");
     Adventurer asuna = new Adventurer("Asuna");
     asuna.acceptedQuest(new Quest("Q005", "Retrieve the crest of Yggdrasil"));
-    
+    kirito.acceptedQuest(slayDragon);
+    kirito.acceptedQuest(craftArmor);
+    kirito.acceptedQuest(slayDragon);
+    kirito.acceptedQuest(craftArmor);
+    kirito.completedQuest(craftArmor);
+    System.out.println(kirito.name + "' Total\n" + "Completed Quest: " + kirito.getCompletedCount() + "\nAccepted Quest: " + Adventurer.getAcceptedCount());
   }
 }
