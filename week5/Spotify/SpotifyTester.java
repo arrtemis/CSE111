@@ -71,5 +71,9 @@ public class SpotifyTester {
     System.out.println("20==========");
     p1.info();
     System.out.println("21==========");
+    p1.showHistory();
+    System.out.println("22==========");
+    p2.showHistory();
+    System.out.println("23=========="); 
   }
 }

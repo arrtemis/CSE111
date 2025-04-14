@@ -3,6 +3,7 @@ package week5.Spotify;
 public class Playlist {
   public String name;
   public Song start;
+  public Song historyStart;
 
   //-----------------------------------------task2 start------------------------
   public Playlist(String playlistName){
@@ -76,6 +77,7 @@ public class Playlist {
     while (currentSong.next != null) {
       if(currentSong.name.equals(songName)){
         System.out.println("Playing " + songName + " by " + currentSong.artist);
+        addToHistory(currentSong);
         break;
       }
       currentSong = currentSong.next;
@@ -97,6 +99,7 @@ public class Playlist {
       currentSong = currentSong.next;
     }
     System.out.println("Playing " + currentSong.name + " by " + currentSong.artist);
+    addToHistory(currentSong);
   }
   //-----------------------------------------task7 end--------------------------
 
@@ -148,4 +151,35 @@ public class Playlist {
     }
     System.out.println("Merge Completed!");
   }
+  //-----------------------------------------task10 end--------------------------
+  
+  //----------------------------------------task11 start------------------------
+  public void addToHistory(Song song){
+    Song historySong = new Song(song.name, song.artist, song.duration);
+    if(historyStart == null){
+      historyStart = historySong;
+    }else{
+      Song currentSong = historyStart;
+      while (currentSong.next != null) {
+        currentSong = currentSong.next;
+      }
+      currentSong.next = historySong;
+    }
+  }
+
+  public void showHistory(){
+    System.out.println("History of " + name + ":");
+    if(historyStart == null){
+      System.out.println("No songs played in " + name);
+      return;
+    }
+    Song currentSong = historyStart;
+    while(currentSong != null){
+      currentSong.songInfo();
+      currentSong = currentSong.next;
+    }
+  }
+  //----------------------------------------task11 end--------------------------
+
+
 }

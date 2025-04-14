@@ -16,7 +16,4 @@ public class Song {
     System.out.println("Title: " + name + ", Artist: " + artist + "\nLength: " + duration + " minutes");
   }
   //-----------------------------------------task1 end---------------------------
-
-
-
 }
