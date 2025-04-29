@@ -3,7 +3,7 @@
 # Output file where all code will be combined
 OUTPUT_FILE="Assignment _24201102_Jayed Yeameen.txt"
 
-# String to exclude
+# String to exclude (change this to whatever you want to exclude)
 EXCLUDE_STRING="Tester"
 
 # Clear any existing output file
@@ -27,4 +27,4 @@ done
 
 mv "$OUTPUT_FILE" "/home/arte/cse111_assignments/"
 
-echo "All Java files (excluding those with '$EXCLUDE_STRING') have been combined into "$OUTPUT_FILE"
+echo "All Java files (excluding those with '$EXCLUDE_STRING') have been combined into $OUTPUT_FILE"
