@@ -14,4 +14,13 @@ public class Character {
   }
   
   // Override the .equals() method
+  @Override
+  public boolean equals(Object character){
+    Character chara = (Character) character;
+    if(this.name.equals(chara.name) && this.level == chara.level){
+      return true;
+    }
+
+    return false;
+  }
 }
