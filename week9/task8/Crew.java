@@ -1,4 +1,4 @@
-package week9.task8;
+package task8;
 
 public class Crew extends Moo {
   void method1() {
