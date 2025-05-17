@@ -18,14 +18,17 @@ public class Nokia extends Mobile {
 
   }
 
-	public String dialCall(String string) {
-    String countryCode = string.substring(0, 3);
+	public String dialCall(String number) {
+    String countryCode = "";
+    for(int i = 0; i < 3; i++){
+      countryCode += number.charAt(i);
+    }
     String countryName = getCountryName(countryCode);
     if (countryName != null) {
       if (simCardStatus) {
         if (balance > 0) {
           balance -= 1;
-          return "Dialing " + string + " from " + model + " in " + countryName;
+          return "Dialing " + number + " from " + model + " in " + countryName;
         } else {
           return "Insufficient balance to make a call.";
         }
