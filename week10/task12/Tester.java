@@ -10,18 +10,20 @@ public class Tester {
     Object d6 = new Smartphone();
     d1.start();
     d2.start();
-    d4.start();
-    d6.start();
+    // d4.start();
+    // d6.start();
     d1.shutdown();
     d3.shutdown();
-    d4.shutdown();
+    // d4.shutdown();
     d5.shutdown();
-    d6.shutdown();
-    ((GamingLaptop)d4).notifyUser();
-    ((GamingLaptop)d6).shutdown();
-    ((Smartphone)d1).notifyUser();
+    // d6.shutdown();
+    // ((GamingLaptop)d4).notifyUser();
+    // ((GamingLaptop)d6).shutdown();
+    // ((Smartphone)d1).notifyUser();
     ((Smartphone) d6).start();
+    System.out.println("=====================================================");
     ((GamingLaptop) d5).start();
+1    System.out.println("=====================================================");
     ((GamingLaptop)d5).notifyUser();
 
 
