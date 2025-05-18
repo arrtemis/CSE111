@@ -23,7 +23,7 @@ public class Tester {
     ((Smartphone) d6).start();
     System.out.println("=====================================================");
     ((GamingLaptop) d5).start();
-1    System.out.println("=====================================================");
+    System.out.println("=====================================================");
     ((GamingLaptop)d5).notifyUser();
 
 

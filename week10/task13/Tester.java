@@ -26,7 +26,9 @@ System.out.println(((Department)c1).chant);;
 ((Object)c1).toString();
 System.out.println(((Department)c2));
 System.out.println(((Department)o1));
+System.out.println("=======================");
 ((EEEDept)o2).advising();
+    System.out.println("=======================");
 System.out.println("run time error");
 // ((SoftwareDept)o2).task1();
   }
